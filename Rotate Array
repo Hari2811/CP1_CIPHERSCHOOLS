@@ -1,0 +1,22 @@
+Given an array, rotate the array to the right by k steps, where k is non-negative.
+
+Follow up:
+
+Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.
+Could you do it in-place with O(1) extra space?
+
+class Solution {
+    public void rotate(int[] nums, int k) {
+            int z=nums.length;
+    for(int i=1;i<= k;i++)
+    {
+        int temp=nums[z-1];
+        
+        for(int j=z-1;j>0;j--)
+        {
+            nums[j]=nums[j-1];
+        }
+      nums[0]=temp;  
+    }
+    }
+}
