@@ -1,0 +1,29 @@
+Given a non-empty, singly linked list with head node head, return a middle node of linked list.
+
+If there are two middle nodes, return the second middle node.
+
+class Solution {
+public:
+    int length(ListNode* head){
+        ListNode* ptr = head;
+        int count = 0;
+        while(ptr!=NULL){
+            count++;
+            ptr = ptr->next;
+        }
+        return count;
+    }
+    ListNode* middleNode(ListNode* head) {
+        int len = length(head);
+        ListNode* qtr = head;
+        int i=0;
+        if(len==1 or len==0){
+            return head;
+        }
+        while(i<len/2){
+            qtr = qtr->next;
+            i++;
+        }
+        return qtr;
+    }
+};
