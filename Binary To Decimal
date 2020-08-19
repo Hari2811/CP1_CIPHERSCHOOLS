@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+
+void convert_binary(int num){
+	int sum=0,temp =1,rem;
+	while(num!=0){
+		rem = num%10;
+		if (rem==1){
+			sum = sum + temp;
+		}
+		temp = temp+temp;
+		num=num/10;
+	}
+	cout<<sum;
+}
+int main(){
+	int binary_num;
+	cin>>binary_num;
+	convert_binary(binary_num);
+	return 0;
+}
