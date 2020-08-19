@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+int main(){
+	int m,n,sum_a=0,sum_b=0;
+	cout<<"First array elements";
+	cin>>m;
+	cout<<"Second array elements";
+	cin>>n;
+	int a[m],b[n];
+	cout<<"Enter First Array Elements";
+	for(int i=0;i<m;i++){
+		cin>>a[i];
+		sum_a +=a[i];
+	}
+	cout<<"Enter Second Array Elements";
+	for(int j=0;j<n;j++){
+		cin>>b[j];
+		sum_b += b[j]; 
+	}
+	sum_a = sum_a+sum_b;
+	cout<<sum_a;
+	return 0;
+}
