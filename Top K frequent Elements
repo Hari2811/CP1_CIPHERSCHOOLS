@@ -1,0 +1,24 @@
+Given a non-empty array of integers, return the k most frequent elements.
+
+class Solution {
+public:
+     vector<int> topKFrequent(vector<int>& nums, int k) {
+         vector<int> res;
+         vector<int>::iterator itr;
+         priority_queue<pair<int,int>> pq;
+         unordered_map<int,int>m;
+         unordered_map<int,int>::iterator j;
+         for(itr=nums.begin();itr!=nums.end();itr++){
+             m[*itr]++;
+         }
+         for(j=m.begin();j!=m.end();j++){
+             pq.push(make_pair(j->second,j->first));
+         }
+          while(k>0){
+              res.push_back(pq.top().second);
+                pq.pop();
+              k--;
+          }
+         return res;
+    }
+};
