@@ -1,0 +1,27 @@
+class Solution {
+public:
+    ListNode *detectCycle(ListNode *head) {
+        
+        if(head==NULL)
+            return NULL;
+        
+        map<ListNode*,int>m;
+        
+        struct ListNode* ptr=head;
+        int i=0;
+        
+        while(ptr!=NULL)
+        {
+            auto id=m.find(ptr);
+            if(id==m.end())
+                m.insert({ptr,i});
+            else
+                return id->first;
+            i++;
+            
+            ptr=ptr->next;
+        }
+        
+        return NULL;
+    }
+};
