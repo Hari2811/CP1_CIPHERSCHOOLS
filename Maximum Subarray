@@ -1,0 +1,18 @@
+class Solution {
+public:
+      int maxSubArray(vector<int>& nums) {
+        if(nums.empty()) {
+            return 0;
+        }
+		
+        int present_sum = nums.front();
+        int max_sum = nums.front();
+        
+        for(int i = 1; i < nums.size(); ++i) {
+            present_sum = max(nums[i], present_sum + nums[i]);
+            max_sum = max(max_sum, present_sum);
+        }
+        
+        return max_sum;
+    }
+};
